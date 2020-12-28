@@ -23,12 +23,6 @@ end
       expect(subject.dock(bike)).to eq(bike)
     end
 
-    it "returns the correct docked bike" do
-      bike = Bike.new
-      subject.dock(bike)
-      expect(subject.bikes).to eq(subject.bikes)
-    end
-
     it "returns an error if the docking station is full" do
       subject.capacity.times { subject.dock Bike.new }
       expect{ subject.dock(Bike.new) }.to raise_error 'Docking Station full'

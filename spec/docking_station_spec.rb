@@ -22,7 +22,7 @@ end
     it "returns the correct docked bike" do
       bike = Bike.new
       subject.dock(bike)
-      expect(subject.bike).to eq(bike)
+      expect(subject.bikes).to eq(bike)
     end
 
     it "returns an error if the docking station is full" do

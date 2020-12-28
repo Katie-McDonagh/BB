@@ -5,7 +5,7 @@ class Bike
   end
 
   def working?
-    true
+     @broken == false ? true : false
   end
 
   def broken?

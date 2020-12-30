@@ -14,20 +14,24 @@ class Van
     array_of_bikes.each do |bike|
       if bike.broken? 
         @broken_bikes.push(bike)
-    else
-      @fixed_bikes.push(bike)
+      else
+        @fixed_bikes.push(bike)
+      end
     end
   end
 
   def drop_off_bikes(garage)
-    #if bike is broken
     @broken_bikes.each do |bike|
       garage.bikes_to_fix.push(bike)
       @broken_bikes.delete(bike)
     end
+  end
 
-    #else dock the bikes at the docking station
+  def drop_off_working_bikes(docking_station)
+    @fixed_bikes.each do |bike|
+      docking_station.bikes.push(bike)
+      @fixed_bikes.delete(bike)
+    end
   end
 end
 
-end

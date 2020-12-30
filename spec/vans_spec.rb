@@ -31,4 +31,14 @@ describe Van do
     subject.pick_up_bike(working_bikes)
     expect(subject.fixed_bikes).to include(bike)
   end
+
+  it "drops off working bikes to the docking station" do
+    bike = double(:bike, broken?: false)
+    bikes = [bike]
+    subject.pick_up_bike(bikes)
+    ds = double(:docking_station)
+    allow(ds).to receive(:bikes) { [] }
+    subject.drop_off_working_bikes(ds)
+    expect(subject.fixed_bikes).to be_empty
+  end
 end

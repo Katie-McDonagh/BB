@@ -24,4 +24,11 @@ describe Van do
     expect(subject.broken_bikes).to be_empty
   end
   end
+
+  it "pick up working bikes from the garage" do
+    bike = double(:bike, broken?: false)
+    working_bikes = [bike]
+    subject.pick_up_bike(working_bikes)
+    expect(subject.fixed_bikes).to include(bike)
+  end
 end

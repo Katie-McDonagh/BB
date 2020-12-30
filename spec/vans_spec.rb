@@ -12,4 +12,15 @@ describe Van do
     subject.pick_up_bike(bikes)
     expect(subject.broken_bikes).to include(bike)
   end
+
+  describe "#drop_off_bikes" do
+  it "drops off an array of broken bikes" do
+    bike = double(:bike, broken?: true)
+    bikes = [bike]
+    subject.pick_up_bike(bikes)
+    garage = double(:garage)
+    subject.drop_off_bikes(garage)
+    expect(subject.broken_bikes).to be_empty
+  end
+  end
 end

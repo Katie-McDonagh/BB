@@ -36,13 +36,5 @@ end
       expect{ subject.dock((:bike)) }.to raise_error 'Docking Station full'
     end
   end
-  # describe "#load_broken_bikes" do
-  #   it "loads all broken bikes into a van" do
-  #     bike = double(:bike, broken?: true)
-  #     van = double(:van, pick_up_bike)
-  #     subject.load_broken_bikes
-  #     expect()
-  #   end
-
 
 end

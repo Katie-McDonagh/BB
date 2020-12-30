@@ -1,5 +1,6 @@
 require_relative 'docking_station'
 require_relative 'bike'
+require_relative 'garage'
 class Van 
 
   attr_reader :broken_bikes

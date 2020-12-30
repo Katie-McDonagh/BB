@@ -23,8 +23,12 @@ class DockingStation
   @bikes[-1]
  end
 
-
- end
+ # def load_broken_bikes(van)
+    # @bikes.each do |bike|
+        # if bike.broken?
+          # van.pick_up_bike(bike)
+          #end
+ # end
 
 
  private

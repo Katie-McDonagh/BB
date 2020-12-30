@@ -6,7 +6,7 @@ describe Van do
   let(:docking_station) { double :docking_station }
 
   it "is passed broken bikes by the docking station" do
-    bike = double(:bike, broken?: true)
+    bike = double(:bike, broken: true)
     # docking_station = double(:docking_station, bikes: [bike])
     bikes = [bike]
     subject.pick_up_bike(bikes)
@@ -15,7 +15,7 @@ describe Van do
 
   describe "#drop_off_bikes" do
   it "drops off an array of broken bikes" do
-    bike = double(:bike, broken?: true)
+    bike = double(:bike, broken: true)
     bikes = [bike]
     subject.pick_up_bike(bikes)
     garage = double(:garage)
@@ -26,14 +26,14 @@ describe Van do
   end
 
   it "pick up working bikes from the garage" do
-    bike = double(:bike, broken?: false)
+    bike = double(:bike, broken: false)
     working_bikes = [bike]
     subject.pick_up_bike(working_bikes)
     expect(subject.fixed_bikes).to include(bike)
   end
 
   it "drops off working bikes to the docking station" do
-    bike = double(:bike, broken?: false)
+    bike = double(:bike, broken: false)
     bikes = [bike]
     subject.pick_up_bike(bikes)
     ds = double(:docking_station)

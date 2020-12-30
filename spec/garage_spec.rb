@@ -4,7 +4,7 @@ describe Garage do
   
   it "receives broken bikes from the van" do
     van = Van.new
-    bike = double(:bike, broken?: true)
+    bike = double(:bike, broken: true)
     bikes = [bike]
     # allow(van).to receive(:pick_up_bike).with(bikes)
     # allow(van).to receive(:drop_off_bikes).with(subject)

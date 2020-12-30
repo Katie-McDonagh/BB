@@ -12,10 +12,12 @@ class Van
 
   def pick_up_bike(array_of_bikes)
     array_of_bikes.each do |bike|
-      if bike.broken? 
+      if bike.broken
         @broken_bikes.push(bike)
+        array_of_bikes.delete(bike)
       else
         @fixed_bikes.push(bike)
+        array_of_bikes.delete(bike)
       end
     end
   end

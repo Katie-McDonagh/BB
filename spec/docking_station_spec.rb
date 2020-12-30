@@ -27,7 +27,7 @@ describe DockingStation do
 end
   describe "#dock" do 
     it "docks a bike" do
-      expect(subject.dock(:bike)).to eq(bike)
+      expect(subject.dock(:bike)).to eq(:bike)
     end
 
     it "returns an error if the docking station is full" do
@@ -43,6 +43,6 @@ end
   #     subject.load_broken_bikes
   #     expect()
   #   end
-  end
+
 
 end

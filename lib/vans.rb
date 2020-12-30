@@ -13,9 +13,13 @@ class Van
     @broken_bikes = []
   end
 
-  def pick_up_bike(bike)
-    @broken_bikes.push(bike)
+  def pick_up_bike(array_of_bikes)
+    array_of_bikes.each do |bike|
+      if bike.broken? 
+        @broken_bikes.push(bike)
+      end
   end
+end
 
 end
 

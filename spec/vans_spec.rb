@@ -19,6 +19,7 @@ describe Van do
     bikes = [bike]
     subject.pick_up_bike(bikes)
     garage = double(:garage)
+    allow(garage).to receive(:bikes_to_fix) { [] }
     subject.drop_off_bikes(garage)
     expect(subject.broken_bikes).to be_empty
   end

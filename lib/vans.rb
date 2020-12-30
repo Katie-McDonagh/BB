@@ -14,6 +14,13 @@ class Van
         @broken_bikes.push(bike)
       end
   end
+
+  def drop_off_bikes(garage)
+    @broken_bikes.each do |bike|
+      garage.bikes_to_fix.push(bike)
+      @broken_bikes.delete(bike)
+    end
+  end
 end
 
 end

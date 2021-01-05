@@ -23,11 +23,9 @@ describe Garage do
   end
 
   it "fixes bikes" do
-    bike = Bike.new
-    bike.report_broken
+    bike = double(:bike, broken?: true)
     subject.bikes_to_fix.push(bike)
-    p subject.bikes_to_fix
+    expect(bike).to receive(:fix_bike)
     subject.fix_bikes
-    expect(subject.working_bikes[0].working?).to eq(true)
   end
 end

@@ -23,6 +23,19 @@ describe Van do
     subject.drop_off_bikes(garage)
     expect(subject.broken_bikes).to be_empty
   end
+
+  it "dropping off a bike pushes it to a garage's bike's to fix array" do
+    bike = double(:bike, broken: true)
+    bikes = [bike]
+    subject.pick_up_bike(bikes)
+    garage = double(:garage)
+    test_array = []
+    allow(garage).to receive(:bikes_to_fix) { test_array }
+    expect(garage.bikes_to_fix).to receive(:push).with(bike)
+    subject.drop_off_bikes(garage)
+  end
+
+
   end
 
   it "pick up working bikes from the garage" do
